@@ -247,8 +247,12 @@ class ExperimentManager(object):
         """
         # Save env configs
         config = Config()
+        data = {}
+        for k in dir(config):
+            if not k.startswith('__'):
+                data[k] = config.__getattribute__(k)
         with open(os.path.join(self.params_path, "env_config.yml"), "w") as f:
-            yaml.dump(config, f)
+            yaml.dump(data, f)
 
         # Save hyperparams
         with open(os.path.join(self.params_path, "config.yml"), "w") as f:
