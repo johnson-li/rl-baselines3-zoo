@@ -45,6 +45,8 @@ from utils.callbacks import SaveVecNormalizeCallback, TrialEvalCallback
 from utils.hyperparams_opt import HYPERPARAMS_SAMPLER
 from utils.utils import ALGOS, get_callback_list, get_latest_run_id, get_wrapper_class, linear_schedule
 
+from naiad.config import Config
+
 
 class ExperimentManager(object):
     """
@@ -243,6 +245,11 @@ class ExperimentManager(object):
 
         :param saved_hyperparams:
         """
+        # Save env configs
+        config = Config()
+        with open(os.path.join(self.params_path, "env_config.yml"), "w") as f:
+            yaml.dump(config, f)
+
         # Save hyperparams
         with open(os.path.join(self.params_path, "config.yml"), "w") as f:
             yaml.dump(saved_hyperparams, f)

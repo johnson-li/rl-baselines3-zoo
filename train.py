@@ -16,7 +16,14 @@ import utils.import_envs  # noqa: F401 pytype: disable=import-error
 from utils.exp_manager import ExperimentManager
 from utils.utils import ALGOS, StoreDict
 
+# Import naiad packets
+import naiad.gym.env
+# import network_sim
+
+
+# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 seaborn.set()
+
 
 if __name__ == "__main__":  # noqa: C901
     parser = argparse.ArgumentParser()
