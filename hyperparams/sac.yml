@@ -11,7 +11,7 @@ CongestionControl-v0:
   tau: 0.01
   learning_starts: 0
   use_sde: True
-  policy_kwargs: "dict(log_std_init=-3, net_arch=[400, 300])"
+  policy_kwargs: "dict(log_std_init=-3, net_arch=[120, 80])"
 
 # Tuned
 MountainCarContinuous-v0:

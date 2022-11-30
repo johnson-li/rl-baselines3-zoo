@@ -19,7 +19,8 @@ from stable_baselines3.common.vec_env import DummyVecEnv, SubprocVecEnv, VecEnv,
 from torch import nn as nn  # noqa: F401 pylint: disable=unused-import
 
 # Import naiad packets
-# from naiad.nn.policy import MyPPO
+from naiad.nn.policy import MyPPO
+from naiad.nn.policy1 import PPO1
 
 ALGOS = {
     "a2c": A2C,
@@ -33,7 +34,8 @@ ALGOS = {
     "qrdqn": QRDQN,
     "tqc": TQC,
     "trpo": TRPO,
-#     "myppo": MyPPO,
+    "myppo": MyPPO,
+    "ppo1": PPO1,
 }
 
 

@@ -52,7 +52,7 @@ CongestionControl-v0:
   gamma: 0.995
   n_epochs: 20
   ent_coef: 0
-  vf_coef: .3
+  vf_coef: .01
   learning_rate: lin_0.001
   clip_range: lin_0.2
   policy_kwargs: "dict(net_arch=[120, 80])"
